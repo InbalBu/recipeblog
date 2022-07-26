@@ -5,10 +5,13 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 
+console.log("Database_URL", process.env.DATABASE_URL);
+
+const dotenv = require("dotenv");
+dotenv.config(); // load dotenv library
+
 const app = express();
 const port = process.env.PORT || 3000; // setting my port listener
-
-require('dotenv').config(); // load dotenv library
 
 app.use(express.urlencoded({ extended: true })); // inbuilt express method to recognize incoming request as string or arrays
 app.use(express.static('public')); // helps saving the path folders for imgs etc
