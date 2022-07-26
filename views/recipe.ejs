@@ -1,0 +1,42 @@
+<% if (recipe != null) { %>
+
+
+<div>
+    <ol class="navigateCategories">
+        <li><a href="/">Home</a></li>
+        <li class="exploreCategories"> 
+            <%- recipe.name %>
+        </li>
+    </ol>
+</div>
+
+<div class="singleRecipeImg">
+    <img src="/uploads/<%- recipe.image %>" alt=" <%- recipe.name %>" loading="lazy"> 
+</div>
+
+<div class="singleContainer">
+    <div class="singleRecipeHead">
+        <h1> <%- recipe.name %> </h1>
+    </div>
+    
+    <div class="singleRecipeP">
+        <p><%- recipe.category %></p>
+    </div>
+    
+    <div class="desc">
+        <%- recipe.description %>
+    </div>
+    
+    <div class="ingredients">
+        <h4>Ingredients</h4>
+        <ul class="list">
+    
+            <% recipe.ingredients.forEach(function(ingredients, index){ %>
+            <li>
+                <%= ingredients %>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+<% } %>

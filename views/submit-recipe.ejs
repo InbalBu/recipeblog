@@ -1,0 +1,80 @@
+<h1 class="latestHeader">Submit Recipe</h1>
+
+<div class="recipe_desc">
+    <p>Share your recipies with friends across the world. Fill our form to get started!</p>
+</div>
+
+<% if (infoSubmitObj != '') { %>
+<div class="alert alert-success" role="alert">
+    <%= infoSubmitObj %>
+</div>
+<% } %>
+
+<% if (infoErrorsObj != '') { %>
+    <div class="alertF alert-danger" role="alert">
+        <%= infoErrorsObj[0].message %>
+    </div>
+    <% } %>
+
+<div>
+    <form action="/submit-recipe" enctype="multipart/form-data" method="POST" class="form">
+
+        <div class="input">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div class="input">
+            <label for="name">Recipe Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="input">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="4"></textarea>
+        </div>
+
+        <div class="input">
+            <label for="name">Ingredients:</label><br>
+            <small>Example: 50g Cheese</small>
+
+            <div class="ingredientList">
+                <div class="ingredientDiv">
+                    <input  type="text" name="ingredients">
+                </div>
+            </div>
+        </div>
+
+        <div class="input">
+            <button class="input_btn" type="button" id="addIngredientsBtn">+ Ingredient</button>
+        </div>
+
+        <div class="input">
+            <label for="category">Select Category</label>
+            <select class="input_label" name="category" aria-label="Category" >
+                <option selected>Select Category</option>
+                <option value="American">American</option>
+                <option value="Thai">Thai</option>
+                <option value="Israeli">Israeli</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Greek">Greek</option>
+                <option value="French">French</option>
+                <option value="Turkish">Turkish</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+        </div>
+
+        <div class="input">
+            <label for="image">Upload Image</label>
+            <input class="input_upload" type="file" name="image" accept="image/*">
+        </div>
+
+        <div> 
+            <button class="input_submit" type="submit">Submit Recipe</button>
+        </div>
+
+      
+    </form>
+</div>

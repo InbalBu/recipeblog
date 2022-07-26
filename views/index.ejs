@@ -1,0 +1,160 @@
+<div class="banner">
+    
+    <div class="heading">
+        <h1>
+            Huge selection of delicios <br> recipe ideas
+        </h1>
+        <p class="desc">
+            Come join me and many others in our culinary adventures, <br> where we'll be sharing new ideas and ingredients, <br> to make meals for the everyday home cook.
+        </p>
+    </div>
+    <img src="/img/Herobanner.jpg" width="20%" height="20%" alt="">
+    
+</div>
+
+
+
+<div class="banner">
+    <a class="exploreBtn" href="/explore-latest">Explore Latest</a>
+    <a class="randomBtn" href="/explore-random">Show Random Recipe</a>
+</div>
+
+<!-- Categoris -->
+
+<div class="category">
+
+    <% if(categories != '')  { %>
+        <% categories.forEach(function(category, index) { %> 
+
+    <a href="#">
+        <img class="img" src="img/<%- category.image %>" alt="<%- category.name %>" Loading="lazy" width="80%" >
+        <p class="foodName"><%- category.name %></p>
+    </a>
+    <% }) %>
+    <% } %>
+  
+
+    <a href="/categories">
+        <img class="img" src="img/view.jpg" alt="View all categories" Loading="lazy" width="80%" >
+        <p class="foodName">View All...</p>
+
+    </a>
+</div>
+
+
+<!-- Featured Recepie-->
+
+<section>
+    <div>
+        <h2 class="latestHeader">Latest Recipes</h2>
+    </div>
+    <div class="latestContainer">
+        <% if(food != '') { %>
+            <% food.latest.forEach(function(recipe, index) { %> 
+
+        <a href="/recipe/<%= recipe._id %>" class="imgLatest">
+            <img  src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" Loading="lazy" width="30%" height="60%">
+            <p ><%= recipe.name %></p>
+        </a>
+        <% }) %>
+        <% } else { %>
+            <p>No items found.</p>
+            <% } %>
+    </div>
+    <a class="latestBtn" href="/explore-latest">View More</a>
+</section>
+
+<!-- Thai Recipes -->
+
+<section>
+    <div>
+        <h2 class="latestHeader">Thai Recipes</h2>
+    </div>
+    <div class="latestContainer">
+        <% if(typeof food.thai !== 'undefined' && food.thai.length > 0) { %>
+            <% food.thai.forEach(function(recipe, index) { %> 
+
+        <a href="/recipe/<%= recipe._id %>" class="imgLatest">
+            <img  src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" Loading="lazy" width="30%" height="60%">
+            <p ><%= recipe.name %></p>
+        </a>
+        <% }) %>
+        <% } else { %>
+            <p>No items found.</p>
+            <% } %>
+    </div>
+    <a class="latestBtn" href="/categories/Thai">View More</a>
+</section>
+
+
+
+<!-- American Recipes -->
+
+
+<section>
+    <div>
+        <h2 class="latestHeader">American Recipes</h2>
+    </div>
+    <div class="latestContainer">
+        <% if(food.american != '') { %>
+            <% food.american.forEach(function(recipe, index) { %> 
+
+        <a href="/recipe/<%= recipe._id %>" class="imgLatest">
+            <img  src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" Loading="lazy" width="30%" height="60%">
+            <p ><%= recipe.name %></p>
+        </a>
+        <% }) %>
+        <% } else { %>
+            <p>No items found.</p>
+            <% } %>
+    </div>
+    <a class="latestBtn" href="/categories/American">View More</a>
+</section>
+
+
+<!-- Italian Recipes -->
+
+
+<section>
+    <div>
+        <h2 class="latestHeader">Italian Recipes</h2>
+    </div>
+    <div class="latestContainer">
+        <% if(food.italian != '') { %>
+            <% food.italian.forEach(function(recipe, index) { %> 
+
+        <a href="/recipe/<%= recipe._id %>" class="imgLatest">
+            <img  src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" Loading="lazy" width="30%" height="60%">
+            <p ><%= recipe.name %></p>
+        </a>
+        <% }) %>
+        <% } else { %>
+            <p>No items found.</p>
+            <% } %>
+    </div>
+    <a class="latestBtn" href="/categories/Italian">View More</a>
+</section>
+
+
+
+    <!-- Submit Recepie-->
+
+    <section>
+        <div class="submitHeading">
+            <h1 >Publish your recipe for FREE today!</h1>
+        </div>
+
+        <div class="submitText">
+            <p>Publish your Recipe in front of thousand of people for free.</p>
+        </div>
+        
+        <div class="submitImg" >
+            <img src="/img/cookingpeople.png" alt="people cooking" width="30%" height="10%">
+        </div>
+
+        <div class="submitBtn">
+            <a href="/submit-recipe">Submit Recipe</a>
+        </div>
+       
+
+    </section>

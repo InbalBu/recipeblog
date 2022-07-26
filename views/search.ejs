@@ -1,0 +1,16 @@
+<h1 class="latestHeader">Search Results</h1>
+
+
+<div class="latestContainer">
+    <% if(recipe != '') { %>
+        <% recipe.forEach(function(recipe, index) { %> 
+
+    <a href="/recipe/<%= recipe._id %>" class="imgLatest">
+        <img  src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" Loading="lazy" width="30%" height="60%">
+        <p ><%= recipe.name %></p>
+    </a>
+    <% }) %>
+    <% } else { %>
+        <p>No items found.</p>
+        <% } %>
+</div>
