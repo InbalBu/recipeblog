@@ -1,3 +1,4 @@
 # secret file
 .env
 .vercel
+/node_modules
