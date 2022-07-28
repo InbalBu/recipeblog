@@ -32,6 +32,8 @@ body {
     margin-left: 100px;
     margin-top: -40px;
     cursor: pointer;
+    outline: none !important;
+    border: none;
 }
 
 .search input{
